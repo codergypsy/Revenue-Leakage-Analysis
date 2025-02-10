@@ -1,7 +1,7 @@
 # Revenue Leakage Analysis in Insurance Claims
 
 ![Power BI Dashboard Preview](![image](https://github.com/user-attachments/assets/3c124f20-9a6e-4f47-b3e4-63aa454397e8)) 
-*Example Dashboard - Replace with Actual Screenshot*
+
 
 ## 📌 Overview
 This project identifies potential revenue leakage points (>$500K annually) in insurance operations using machine learning (Random Forest) and data analytics. The solution analyzes policy data, claims history, and customer information to detect patterns leading to financial losses.

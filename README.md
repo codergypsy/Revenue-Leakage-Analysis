@@ -42,8 +42,10 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
+```
 
 ## Dataset Generation <a name="dataset-generation"></a>
+```bash
 import pandas as pd
 import numpy as np
 from faker import Faker
@@ -66,10 +68,12 @@ def generate_insurance_data(num_records=10000):
 
 if __name__ == "__main__":
     generate_insurance_data()
+```
 
 ## Data Analysis Pipeline <a name="data-analysis-pipeline"></a>
 #Feature Engineering
 # Age group binning with inclusive ranges
+```bash
 df['age_group'] = pd.cut(
     df['customer_age'],
     bins=[17, 30, 45, 60, 80],
@@ -87,10 +91,11 @@ df['premium_claim_ratio'] = np.divide(
 
 # Temporal features
 df['policy_age'] = (pd.to_datetime('today') - df['policy_start_date']).dt.days // 365
+```
 
 ## Model Training <a name="model-training"></a>
 # Random Forest Classifier
-
+```bash
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.pipeline import Pipeline
 
@@ -112,10 +117,12 @@ param_grid = {
 
 grid_search = GridSearchCV(model_pipeline, param_grid, cv=3, scoring='recall')
 grid_search.fit(X_train, y_train)
+```
 
 ## Power BI Dashboard <a name="power-bi-dashboard"></a>
 #Key Components
 **Metrics Card:**
+```bash
 1. Avg Leakage Probability = AVERAGE('leakage_analysis_results'[leakage_probability])
 2. High Risk Policies = CALCULATE(
     COUNTROWS('leakage_analysis_results'),
@@ -128,28 +135,32 @@ DIVIDE(
 )
 4. Recovery Potential = [Total Leakage] * 0.7
 5. Total Leakage = SUM('leakage_analysis_results'[estimated_leakage_amount])
+```
 
 #Data Flow
-
+```bash
 graph LR
     A[Python Model] --> B{{Feature Importance}}
     A --> C{{Processed Data}}
     B --> D[Power BI]
     C --> D
     D --> E[Dashboard Visuals]
-
+```
 ##Troubleshooting <a name="troubleshooting"></a>
 
 # Handle infinite values
+```bash
 df.replace([np.inf, -np.inf], np.nan, inplace=True)
 df.fillna(df.median(), inplace=True)
+```
 
 # Date Conversion
+```bash
 df['policy_start_date'] = pd.to_datetime(
     df['policy_start_date'],
     errors='coerce'
 ).dt.date
-
+```
 ## Contributing <a name="contributing"></a>
 Fork the repository
 

@@ -123,6 +123,7 @@ grid_search.fit(X_train, y_train)
 #Key Components
 **Metrics Card:**
 ```bash
+
 1. Avg Leakage Probability = AVERAGE('leakage_analysis_results'[leakage_probability])
 2. High Risk Policies = CALCULATE(
     COUNTROWS('leakage_analysis_results'),
@@ -135,19 +136,20 @@ DIVIDE(
 )
 4. Recovery Potential = [Total Leakage] * 0.7
 5. Total Leakage = SUM('leakage_analysis_results'[estimated_leakage_amount])
-```
 
-#Data Flow
 
+
+##Data Flow
+```bash
 graph LR
     A[Python Model] --> B{{Feature Importance}}
     A --> C{{Processed Data}}
     B --> D[Power BI]
     C --> D
     D --> E[Dashboard Visuals]
+```
 
 ##Troubleshooting <a name="troubleshooting"></a>
-
 # Handle infinite values
 ```bash
 df.replace([np.inf, -np.inf], np.nan, inplace=True)

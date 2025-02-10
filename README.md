@@ -138,14 +138,14 @@ DIVIDE(
 ```
 
 #Data Flow
-```bash
+
 graph LR
     A[Python Model] --> B{{Feature Importance}}
     A --> C{{Processed Data}}
     B --> D[Power BI]
     C --> D
     D --> E[Dashboard Visuals]
-```
+
 ##Troubleshooting <a name="troubleshooting"></a>
 
 # Handle infinite values

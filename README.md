@@ -149,7 +149,7 @@ graph LR
     D --> E[Dashboard Visuals]
 ```
 
-##Troubleshooting <a name="troubleshooting"></a>
+## Troubleshooting <a name="troubleshooting"></a>
 # Handle infinite values
 ```bash
 df.replace([np.inf, -np.inf], np.nan, inplace=True)

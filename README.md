@@ -136,7 +136,7 @@ DIVIDE(
 )
 4. Recovery Potential = [Total Leakage] * 0.7
 5. Total Leakage = SUM('leakage_analysis_results'[estimated_leakage_amount])
-
+```
 
 
 ##Data Flow

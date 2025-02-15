@@ -120,7 +120,7 @@ grid_search.fit(X_train, y_train)
 ```
 
 ## Power BI Dashboard <a name="power-bi-dashboard"></a>
-#Key Components
+### Key Components
 **Metrics Card:**
 ```bash
 
@@ -139,7 +139,7 @@ DIVIDE(
 ```
 
 
-##Data Flow
+## Data Flow
 ```bash
 graph LR
     A[Python Model] --> B{{Feature Importance}}
@@ -150,13 +150,13 @@ graph LR
 ```
 
 ## Troubleshooting <a name="troubleshooting"></a>
-# Handle infinite values
+### Handle infinite values
 ```bash
 df.replace([np.inf, -np.inf], np.nan, inplace=True)
 df.fillna(df.median(), inplace=True)
 ```
 
-# Date Conversion
+### Date Conversion
 ```bash
 df['policy_start_date'] = pd.to_datetime(
     df['policy_start_date'],
